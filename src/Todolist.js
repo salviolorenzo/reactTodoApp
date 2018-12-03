@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import List from "./List";
 
 class Todolist extends Component {
   constructor(props) {
@@ -20,6 +21,9 @@ class Todolist extends Component {
           />
           <input type="submit" value="Add" />
         </form>
+        <div>
+          <List items={this.state.items} />
+        </div>
       </div>
     );
   }
@@ -33,7 +37,8 @@ class Todolist extends Component {
   _onSubmit = event => {
     event.preventDefault();
     this.setState({
-      items: [...this.state.items, this.state.term]
+      items: [...this.state.items, this.state.term],
+      term: ""
     });
   };
 }
