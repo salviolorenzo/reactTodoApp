@@ -11,7 +11,7 @@ class Todolist extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="todo-body">
         <h1>Todo App</h1>
         <form onSubmit={this._onSubmit}>
           <input
@@ -21,9 +21,7 @@ class Todolist extends Component {
           />
           <input type="submit" value="Add" />
         </form>
-        <div>
-          <List items={this.state.items} />
-        </div>
+        <List items={this.state.items} />
       </div>
     );
   }

@@ -2,9 +2,13 @@ import React from "react";
 
 function List(props) {
   return (
-    <ul>
+    <ul className="list">
       {props.items.map((item, index) => {
-        return <li key={index}>{item}</li>;
+        return (
+          <li key={index} className="todo-item">
+            {item}
+          </li>
+        );
       })}
     </ul>
   );
