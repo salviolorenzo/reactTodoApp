@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import List from "./List";
+import TodoForm from "./TodoForm";
 
 class Todolist extends Component {
   constructor(props) {
@@ -13,14 +14,11 @@ class Todolist extends Component {
     return (
       <div className="todo-body">
         <h1>Todo App</h1>
-        <form onSubmit={this._onSubmit}>
-          <input
-            onChange={this._onChange}
-            value={this.state.term}
-            placeholder="Enter a new Task"
-          />
-          <input type="submit" value="Add" />
-        </form>
+        <TodoForm
+          onSubmit={this._onSubmit}
+          onChange={this._onChange}
+          value={this.state.term}
+        />
         <List items={this.state.items} />
       </div>
     );
